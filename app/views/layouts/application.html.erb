@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ProductHunt</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css" integrity="sha384-Wrgq82RsEean5tP3NK3zWAemiNEXofJsTwTyHmNb/iL3dP/sZJ4+7sOld1uqYJtE" crossorigin="anonymous">
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header class="main_header">
+	<div class="wrapper">
+
+		<div class="header_wrap">
+				<img src ="assets/product_hunt_logo.png" alt="product hunt logo" class="logo">
+				<i class ="fa fa-search search_icon" aria-hidden="true"></i>
+				<form action="search" class="search_form" id ="search">
+					<input type ="search" placeholder="Discover your next favorite thing..." class="search">
+				</form>
+				<a href="#" class = "toggle_btn">...</a>
+				<a href ="#" class= "login_btn">Login</a>
+			<nav>
+				<ul class = "main_nav">
+					<li><a href="#" class = "nav_items active">Home</a></li>
+					<li><a href="#" class = "nav_items">Tech</a></li>
+					<li><a href="#" class = "nav_items">Games</a></li>
+					<li><a href="#" class = "nav_items">Podacsts</a></li>
+					<li><a href="#" class = "nav_items">Books</a></li>
+					<li><a href="#" class = "nav_items">Photogrphay</a></li>
+					<li><a href="#" class = "nav_items">Developer</a></li>
+					<li><a href="#" class = "nav_items">Bots</a></li>
+					<li><a href="#" class = "nav_items">Wearables</a></li>
+					<li><a href="#" class="nav_items"></a></li>
+				</ul>		
+			</nav>
+		</div>
+	</div>
+</header>
+</div>
+    <%= yield %>
+  </body>
+</html>
