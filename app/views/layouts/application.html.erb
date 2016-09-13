@@ -15,13 +15,13 @@
 	<div class="wrapper">
 
 		<div class="header_wrap">
-				<img src ="assets/product_hunt_logo.png" alt="product hunt logo" class="logo">
+				<img src ="/assets/product_hunt_logo.png" alt="product hunt logo" class="logo">
 				<i class ="fa fa-search search_icon" aria-hidden="true"></i>
 				<form action="search" class="search_form" id ="search">
 					<input type ="search" placeholder="Discover your next favorite thing..." class="search">
 				</form>
 				<a href="#" class = "toggle_btn">...</a>
-				<a href ="#" class= "login_btn">Login</a>
+				<a href ="#" class= "login_btn">login</a>
 			<nav>
 				<ul class = "main_nav">
 					<li><a href="#" class = "nav_items active">Home</a></li>
@@ -40,6 +40,17 @@
 	</div>
 </header>
 </div>
-    <%= yield %>
+<% if user_signed_in? %>
+    You are signed in as <%= current_user.email %>
+<% else %>
+    You need to sign in!
+<% end %>
+	<!-- <p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p> -->
+	 <ul class="hmenu">
+	  <%= render 'devise/menu/registration_items' %>
+	 	<%= render 'devise/menu/login_items' %>
+	</ul>
+	<%= yield %>
   </body>
 </html>
