@@ -155,6 +155,13 @@ Content Styles
   cursor: pointer;
 }
 
+.form_wrap{
+  background-color: red;
+  display: flex;
+  align-content: center;
+  margin:0 auto;
+}
+
 @media screen and (min-width: 768px) {
   .wrapper {
     width: 1200px;
