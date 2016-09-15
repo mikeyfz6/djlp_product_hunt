@@ -2,10 +2,12 @@
 
 one:
   title: MyString
-  description: MyText
+  decription: MyText
   link: MyString
+  product: one
 
 two:
   title: MyString
-  description: MyText
+  decription: MyText
   link: MyString
+  product: two

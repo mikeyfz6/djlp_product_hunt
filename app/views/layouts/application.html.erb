@@ -3,7 +3,7 @@
   <head>
     <title>ProductHunt</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css" integrity="sha384-Wrgq82RsEean5tP3NK3zWAemiNEXofJsTwTyHmNb/iL3dP/sZJ4+7sOld1uqYJtE" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css" integrity="sha384-Wrgq82RsEean5tP3NK3zWAemiNEXofJsTwTyHmNb/iL3dP/sZJ4+7sOld1uqYJtE" crossorigin="anonymous">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -41,16 +41,18 @@
 </header>
 </div>
 <% if user_signed_in? %>
-    You are signed in as <%= current_user.email %>
+    You are Logged in as  <%= current_user.email %>
 <% else %>
-    You need to sign in!
+    You are not logged in! Login or Register.
 <% end %>
-	<!-- <p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p> -->
-	 <ul class="hmenu">
+<ul class="hmenu">
 	  <%= render 'devise/menu/registration_items' %>
 	 	<%= render 'devise/menu/login_items' %>
-	</ul>
+</ul>
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+	<%= link_to 'New Product', new_product_path %>
+
 	<%= yield %>
   </body>
 </html>
