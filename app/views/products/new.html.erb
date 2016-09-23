@@ -1,5 +1,28 @@
-<h1>New Product</h1>
+<div class="form_wrap">
+	<h1 class="add_products_header">Add Products</h1>
+	<%= form_for(@product) do |f| %>
+	    <% if @product.errors.any? %>
+	      <div id="error_explanation">
+	        <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
-<%= render 'form', product: @product %>
-
-<%= link_to 'Back', products_path %>
+	        <ul>
+	        <% @product.errors.full_messages.each do |message| %>
+	          <li><%= message %></li>
+	        <% end %>
+	        </ul>
+	      </div>
+	    <% end %>
+	    <fieldset class ="input_wrap">
+			     <%= f.label :title, class: "title"%>
+			     <%= f.text_field :title, class: "title"%>
+			     <%= f.label :description, class: "description" %>
+			     <%= f.text_area :description, class: "description" %>
+			     <%= f.label :link, class: "link" %>
+			     <%= f.text_field :link, class: "link" %>
+			</fieldset>
+	    <div class="actions">
+	      <%= f.submit :Submit, class: "submit" %>
+	    </div>
+	  <% end %>
+	<%= link_to 'Back', products_path %>
+</div>

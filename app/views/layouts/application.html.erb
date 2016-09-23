@@ -4,55 +4,131 @@
     <title>ProductHunt</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 		<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css" integrity="sha384-Wrgq82RsEean5tP3NK3zWAemiNEXofJsTwTyHmNb/iL3dP/sZJ4+7sOld1uqYJtE" crossorigin="anonymous">
+		<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <header class="main_header">
-	<div class="wrapper">
-
-		<div class="header_wrap">
-				<img src ="/assets/product_hunt_logo.png" alt="product hunt logo" class="logo">
-				<i class ="fa fa-search search_icon" aria-hidden="true"></i>
-				<form action="search" class="search_form" id ="search">
-					<input type ="search" placeholder="Discover your next favorite thing..." class="search">
+  <main id = "app">
+		<div class="header">
+			<div class="constrain_width" style = "max-width: 1100px">
+				<a href="#" class="logo">
+					<span>
+						<img src="/assets/product_hunt_logo.png" alt="Product Logo" width = "40" height = "40">
+					</span>
+				</a>
+				<form action="get" class="search">
+					<label for="search" class="text">
+					<span class="serch_icon">
+							<i class ="fa fa-search search_icon" aria-hidden="true"></i>
+						</span>
+						<input type="text" class="search_bar" placeholder="Discover your next favorite thing...">
+					</label>
 				</form>
-				<a href="#" class = "toggle_btn">...</a>
-				<a href ="/users/sign_in" class= "login_btn">login</a>
-			<nav>
+				<button class = "btn">
+					<span class="drop_down">
+						<a href="#"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
+					</span>
+				</button>
+				<button class = "btn">
+					<span class="login">
+						<a href="#">Login</a>
+					</span>
+				</button>
+				<nav>
 				<ul class = "main_nav">
-					<li><a href="/" class = "nav_items active">Home</a></li>
+					<li><a href="#" class = "nav_items active">Home</a></li>
 					<li><a href="#" class = "nav_items">Tech</a></li>
 					<li><a href="#" class = "nav_items">Games</a></li>
-					<li><a href="#" class = "nav_items">Podacsts</a></li>
+					<li><a href="#" class = "nav_items">Podcasts</a></li>
 					<li><a href="#" class = "nav_items">Books</a></li>
-					<li><a href="#" class = "nav_items">Photogrphay</a></li>
-					<li><a href="#" class = "nav_items">Developer</a></li>
+					<li><a href="#" class = "nav_items">PhotogrphayTools</a></li>
+					<li><a href="#" class = "nav_items">DeveloperTools</a></li>
 					<li><a href="#" class = "nav_items">Bots</a></li>
 					<li><a href="#" class = "nav_items">Wearables</a></li>
-					<li><a href="#" class="nav_items"></a></li>
+					<li><a href="#" class = "nav_items"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
+					<li><a href="#" class = "nav_items"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
 				</ul>		
 			</nav>
+			</div>
+		</div>
+				<div class="main_content_wrapper">
+			<div class="main_content">
+					<%= yield %>
+				<div class="sidebar">
+					<div class="side_box">
+							<div class = "items">
+								<h3 class = "side_box_title">Product Hunt for Chrome</h3>
+								<p class="side_box_discription">A lovely Chrome extension we think you'll love.</p>
+								<button class="side_box_btn"><i class="fa fa-chrome" aria-hidden="true"></i> One click install</i></button>
+						</div>
+				</div>
+				<div class="chat_bar">
+					<div class="chat_header_wrap">
+						<h5>Up and coming live chats</h5>
+						<i class="fa fa-times exit_icon" aria-hidden="true"></i>
+					</div>
+						<div class="chat_items_wrap">
+							<img src = "https://placekitten.com/200/300" class=" chat_img">
+							<div class = "chat_items">
+							<h3 class = "chat_title">Lorem ipsum dolor.</h3>
+							<p class="chat_discription">Lorem ipsum dolor dolor.</p>
+							<button class="btn_item">Remind Me</button>
+						</div>
+						<div class="chat_items_wrap">
+							<img src = "https://placekitten.com/200/300" class=" chat_img">
+							<div class = "chat_items">
+							<h3 class = "chat_title">Lorem ipsum dolor.</h3>
+							<p class="chat_discription">Lorem ipsum dolor dolor.</p>
+							<button class="btn_item">Remind Me</button>
+						</div>
+						<div class="chat_items_wrap">
+							<img src = "https://placekitten.com/200/300" class=" chat_img">
+							<div class = "chat_items">
+							<h3 class = "chat_title">Lorem ipsum dolor.</h3>
+							<p class="chat_discription">Lorem ipsum dolor dolor.</p>
+							<button class="btn_item">Remind Me</button>
+						</div>
+						<div class="chat_items_wrap">
+							<img src = "https://placekitten.com/200/300" class=" chat_img">
+							<div class = "chat_items">
+							<h3 class = "chat_title">Lorem ipsum dolor.</h3>
+							<p class="chat_discription">Lorem ipsum dolor dolor.</p>
+							<button class="btn_item">Remind Me</button>
+						</div>
+						<div class="chat_items_wrap">
+							<img src = "https://placekitten.com/200/300" class=" chat_img">
+							<div class = "chat_items">
+							<h3 class = "chat_title">Lorem ipsum dolor.</h3>
+							<p class="chat_discription">Lorem ipsum dolor dolor.</p>
+							<button class="btn_item">Remind Me</button>
+						</div>
+					 </div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-</header>
-</div>
-<% if user_signed_in? %>
-    You are Logged in as  <%= current_user.email %>
-<% else %>
-    You are not logged in! Login or Register.
-<% end %>
-<ul class="hmenu">
-	  <%= render 'devise/menu/registration_items' %>
-	 	<%= render 'devise/menu/login_items' %>
-</ul>
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
-	<%= link_to 'New Product', new_product_path %>
+	
+		
+						
+  
+				<% if user_signed_in? %>
+				    You are Logged in as  <%= current_user.email %>
+				<% else %>
+				    You are not logged in! Login or Register.
+				<% end %>
+				<ul class="hmenu">
+					  <%= render 'devise/menu/registration_items' %>
+					 	<%= render 'devise/menu/login_items' %>
+				</ul>
+					<p class="notice"><%= notice %></p>
+					<p class="alert"><%= alert %></p>
+					<%= link_to 'New Product', new_product_path %>
 
-	<%= yield %>
+				
+		</main>
   </body>
 </html>

@@ -1,3 +1,42 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.form_wrap {
+	width: 700px;
+	margin: 0 auto;
+}
+.add_products_header{
+	text-align: center;
+	color: #999;
+}
+.input_wrap {
+	padding: 20px;
+	border-radius: 10px;
+	background-color: lightgray;
+	box-shadow: 0 3px 2px -2px lightgray;
+}
+
+.title,
+.description,
+.link {
+	width: 600px;
+	border-radius: 50px;
+	padding: 15px;
+	border: none;
+}
+.title:focus,
+.description:focus,
+.link:focus {
+	outline: none;
+}
+.actions {
+	padding: 20px;	
+}
+.submit {
+	width: 650px;
+	border-radius: 50px;
+	padding: 15px;
+	border: none;
+	background: #adc701;
+	text-transform: uppercase;
+}

@@ -1,10 +1,11 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!,:set_product, only: [:show,:edit, :update, :destroy]
+  load_and_authorize_resource
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    #if can? :read, @products
+      @products = Product.all
   end
 
   # GET /products/1
@@ -58,6 +59,20 @@ class ProductsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  
+
+  def vote
+    @product = Product.find(params[:id])
+    @vote = Vote.new(params[current_user])
+    if @vote.save
+      flash[:notice] =  "You have already upvoted this!"
+      redirect_to :back
+    else
+      @vote.update_attributes( id: 1)
+      @vote.id = current_user.id
     end
   end
 
